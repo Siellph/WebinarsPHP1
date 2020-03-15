@@ -8,11 +8,11 @@ $date = date("Y");
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="author" content="Luka Cvrk (www.solucija.com)" />
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
-	<title><?php echo $title?></title>
+	<title><?= $title?></title>
 </head>
 <body>
 	<div id="content">
-		<?php echo "<h1>$date</h1>" ?>
+		<?= "<h1>$date</h1>" ?>
 		
 		<ul id="menu">
 			<li><a href="#">home</a></li>
