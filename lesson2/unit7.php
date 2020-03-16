@@ -5,11 +5,11 @@ function hours($h) {
     if ($h==0 || $h==5 || $h==6 || $h==7 || $h==8 || $h==9 || 
     $h==10 || $h==11 || $h==12 || $h==13 || $h==14 || $h==15 || 
     $h==16 || $h==17 || $h==18 || $h==19 || $h==20) {
-        return "$h часов";
+        return "$h часов ";
     } elseif ($h==1 || $h==21) {
-        return "$h час";
+        return "$h час ";
     } elseif ($h==2 || $h==3 || $h==4 || $h==22 || $h==23) {
-        return "$h часа";
+        return "$h часа ";
     }
 }
 function minutes($m) {
