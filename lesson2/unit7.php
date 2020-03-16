@@ -1,5 +1,5 @@
 <?php
-$h = date('H');
+$h = date('H')+2; //MSK+2 (время в Екатеринбурге)
 $m = date('i');
 function hours($h) {
     if ($h==0 || $h==5 || $h==6 || $h==7 || $h==8 || $h==9 || 
