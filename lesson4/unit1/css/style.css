@@ -1,0 +1,23 @@
+body {
+    background-color: lightcyan;
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+.img_block {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+img {
+    justify-content: center;
+    margin: 25px;
+    transition: .5s ease-out;
+}
+img:hover {
+    transform: scale(1.1);
+    transition: .5s ease-out;
+}
