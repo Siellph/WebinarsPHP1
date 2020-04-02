@@ -1,0 +1,79 @@
+body {
+    background-color: lightgoldenrodyellow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.good {
+    margin: 25px;
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: silver;
+    transition: 0.5s ease-in;
+}
+.good:hover {
+    transform: scale(1.1);
+}
+.more_title {
+    text-decoration: none;
+    color: #000;
+    outline: none;
+    transition: 0.3s ease-in;
+}
+.more_title:hover {
+    color: lightgreen;
+}
+.more_title:active {
+    color: green;
+}
+.title {
+    margin: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+}
+.left_block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.right_block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px;
+}
+.buy{
+    margin: 3px auto;
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 15px;
+    transition: 0.3s ease-in;
+}
+.buy:hover {
+    background-color: lightgreen;
+}
+.buy:active {
+    background-color: green;
+}
+.desc {
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+.good_img {
+    border-radius: 50%;
+    transition: 0.3s ease-in;
+}
+.good_img:hover {
+    transform: scale(1.1);
+}
+.good_img:active {
+    transform: scale(1);
+}
