@@ -16,6 +16,10 @@ body {
 }
 .good:hover {
     transform: scale(1.1);
+    background-color: lightsteelblue;
+}
+.good:hover .good_img{
+    transform: scale(1.1);
 }
 .more_title {
     text-decoration: none;
@@ -69,7 +73,7 @@ body {
 }
 .good_img {
     border-radius: 50%;
-    transition: 0.3s ease-in;
+    transition: 0.5s ease-in;
 }
 .good_img:hover {
     transform: scale(1.1);

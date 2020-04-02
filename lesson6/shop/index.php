@@ -8,5 +8,6 @@
 </head>
 <body>
     <?= include "engine/goods.php"?>
+    <-------I don't know, что это за единица и откуда она взялась
 </body>
 </html>

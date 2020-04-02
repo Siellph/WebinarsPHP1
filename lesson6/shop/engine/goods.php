@@ -1,7 +1,7 @@
 <?php
 include "database.php";
 
-$sql = "SELECT * FROM goods";
+$sql = "SELECT * FROM goods WHERE id > 0";
 $result = mysqli_query($connection, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -22,6 +22,8 @@ if (mysqli_num_rows($result) > 0) {
         echo '</div>';
         echo '</div>';      
     }
+} else {
+    echo "В базе нет товаров";
 }
 mysqli_close($connection);
 ?>
