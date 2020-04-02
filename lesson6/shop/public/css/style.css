@@ -74,10 +74,15 @@ body {
 .good_img {
     border-radius: 50%;
     transition: 0.5s ease-in;
+    border: none;
 }
 .good_img:hover {
     transform: scale(1.1);
 }
 .good_img:active {
     transform: scale(1);
+    border: none;
+}
+.more_img {
+    outline: none;
 }
