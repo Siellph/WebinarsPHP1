@@ -8,18 +8,40 @@
 </head>
 
 <body>
-    <form action="server.php" method="GET">
-        <input type="number" name="firstnum" placeholder="Введите первое число">
+    <form action="" method="GET">
+        <input type="number" name="firstnum" placeholder="Введите первое число" value="<?=$_GET[firstnum]?>">
         <select name="operation">
             <option value="+">+</option>
             <option value="-">-</option>
             <option value="*">*</option>
             <option value="/">/</option>
         </select>
-        <input type="number" name="secondnum" placeholder="Введите второе число">
+        <input type="number" name="secondnum" placeholder="Введите второе число" value="<?=$_GET[secondnum]?>">
         <input type="submit" value="Посчитать">
     </form>
 
 </body>
 
 </html>
+
+<?php
+$firstnum = (int)$_GET[firstnum];
+$secondnum = (int)$_GET[secondnum];
+if ($_GET['operation']=='+') {
+    $res = $firstnum + $secondnum;
+    echo "$firstnum + $secondnum = ".$res;
+} elseif ($_GET['operation']=="-") {
+    $res = $firstnum - $secondnum;
+    echo "$firstnum - $secondnum = ".$res;
+} elseif ($_GET['operation']=="*") {
+    $res = $firstnum * $secondnum;
+    echo "$firstnum * $secondnum = ".$res;
+} else {
+        if ($secondnum !== 0) {
+            $res = $firstnum / $secondnum;
+            echo "$firstnum / $secondnum = ".$res;
+        } else {
+            echo "На 0 делить нельзя!";
+        }
+    }
+?>
