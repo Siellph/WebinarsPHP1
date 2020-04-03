@@ -14,8 +14,8 @@ if (mysqli_num_rows($result) > 0) {
         $id = $good['id'];
         echo '<div class="good">';
         echo '<div class="left_block">';
-        echo '<a id="'.$id.'" href="engine/onegood.php?id='.$id.'" class="more_title"><p class="title">'.$good_title.'</p></a>';
-        echo '<a id="'.$id.'" href="engine/onegood.php?id='.$id.'" class="more_img"><img class="good_img" src="'.$path_photo.$name_photo.'"></a>';
+        echo '<a id="'.$id.'" href="engine/onegood.php?id='.$id.'" class="more_title" target="_blank"><p class="title">'.$good_title.'</p></a>';
+        echo '<a id="'.$id.'" href="engine/onegood.php?id='.$id.'" class="more_img" target="_blank"><img class="good_img" src="'.$path_photo.$name_photo.'"></a>';
         echo '</div>';
         echo '<div class="right_block">';
         echo '<span class="desc">'.$good_descript.'</span>';
