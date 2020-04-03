@@ -7,7 +7,9 @@
     <title>shop</title>
 </head>
 <body>
+<div class="all_goods">
     <?= include "engine/goods.php"?>
     <-------I don't know, что это за единица и откуда она взялась
+    </div>
 </body>
 </html>

@@ -11,16 +11,18 @@ if (mysqli_num_rows($result) > 0) {
         $good_descript = $good['descript'];
         $good_price = $good['price'];
         $name_photo = $good['name_photo'];
+        $id = $good['id'];
         echo '<div class="good">';
         echo '<div class="left_block">';
-        echo '<a href="engine/onegood.php" class="more_title"><p class="title">'.$good_title.'</p></a>';
-        echo '<a href="engine/onegood.php" class="more_img"><img class="good_img" src="'.$path_photo.$name_photo.'"></a>';
+        echo '<a id="'.$id.'" href="engine/onegood.php?id='.$id.'" class="more_title"><p class="title">'.$good_title.'</p></a>';
+        echo '<a id="'.$id.'" href="engine/onegood.php?id='.$id.'" class="more_img"><img class="good_img" src="'.$path_photo.$name_photo.'"></a>';
         echo '</div>';
         echo '<div class="right_block">';
         echo '<span class="desc">'.$good_descript.'</span>';
         echo '<input type="submit" class="buy" value="В корзину '.$good_price.'&#36;">';
         echo '</div>';
-        echo '</div>';      
+        echo '</div>';
+        // print_r($good);
     }
 } else {
     echo "В базе нет товаров";
