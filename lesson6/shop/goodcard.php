@@ -51,7 +51,7 @@ $good_title = $full_good['name'];
         </div>
         <div class="feed_right">
             <form action="engine/addfeedback.php" method="GET">
-            <input class="textbox" type="text" placeholder="Введите имя">
+            <input class="textbox cap" type="text" placeholder="Введите имя" name="name" required>
             <div class="select_score">Выберите оценку
             <input type="radio" value="1" name="score">1</input>
             <input type="radio" value="2" name="score">2</input>
@@ -59,9 +59,10 @@ $good_title = $full_good['name'];
             <input type="radio" value="4" name="score">4</input>
             <input type="radio" value="5" name="score">5</input>
             </div>
-            <textarea name="feedback_form" class="message" cols="4" rows="50" placeholder="Оставьте отзыв"></textarea>
-            <input class="textbox" type="email" placeholder="Введите ваш e-mail">
-            <input class="button" type="submit" placeholder="Отправить">
+            <textarea name="feed_text" class="message" cols="4" rows="50" placeholder="Оставьте отзыв" required></textarea>
+            <input class="textbox" type="email" placeholder="Введите ваш e-mail" name="contact">
+            <input type="hidden" name="id_product" value="<?=$id?>">
+            <input class="button" type="submit"  value="Отправить">
             </form>
         </div>
     </div>

@@ -30,6 +30,10 @@ form {
     margin-bottom: 30px;
 }
 
+.cap {
+    text-transform: capitalize;
+}
+
 .message:focus,
 .textbox:focus {
     outline: none;
