@@ -1,5 +1,5 @@
 .feedback {
-    margin: 0 auto;
+    margin: auto;
     max-width: 75%;
     display: flex;
     flex-wrap: nowrap;
@@ -11,7 +11,7 @@ form {
     margin: 0 auto;
     max-width: 100%;
     box-sizing: border-box;
-    padding: 25px;
+    padding: 100px 25px 25px 25px;
     border-radius: 5px;
     background: RGBA(255, 255, 255, 1);
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .45);
@@ -44,6 +44,7 @@ form {
 .message {
     background: rgba(255, 255, 255, 0.4);
     width: 100%;
+    height: 120px;
     border: rgba(0, 0, 0, .3) 2px solid;
     box-sizing: border-box;
     -moz-border-radius: 3px;
@@ -86,17 +87,4 @@ form {
     background: RGBA(255, 255, 255, 1);
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .45);
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .45);
-}
-.select_score {
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    width: 100%;
-    border-radius: 3px;
-    border: rgba(0, 0, 0, .3) 2px solid;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    padding: 10px;
-    margin-bottom: 30px;
 }

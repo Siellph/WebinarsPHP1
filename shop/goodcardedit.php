@@ -1,12 +1,22 @@
+<?php
+include "engine/database.php";
+$id = $_GET['id'];
+$sql = "SELECT * FROM goods WHERE id = $id";
+$result = mysqli_query($connection, $sql);
+$full_good = mysqli_fetch_assoc($result);
+$good_title = $full_good['name'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/style_for_onegood.css">
     <link rel="stylesheet" href="public/css/header.css">
-    <title>shop</title>
+    <link rel="stylesheet" href="public/css/feed.css">
+    <title><?=$good_title?></title>
 </head>
 
 <body>
@@ -20,7 +30,7 @@
         <div class="top-menu">
             <ul>
                 <li><a class="clickMenu" href="index.php">Каталог</a></li>
-                <li><a class="clickMenu" href="#" class="cart">Корзина</a></li>
+                <li><a href="#" class="cart">Корзина</a></li>
             </ul>
         </div>
         <div class="block-top-auth">
@@ -28,10 +38,9 @@
             <p><a href="#">Регистрация</a></p>
         </div>
     </header>
+    <?php
+    include "engine/editonegood.php";
+    ?>
+</body>
 
-    <div class="all_goods">
-        <?= include "engine/goods.php"?>
-        <-------I don't know, что это за единица и откуда она взялась 
-    </div> 
-</body> 
 </html>

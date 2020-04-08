@@ -74,7 +74,7 @@ body {
 }
 .good_img {
     width: 500px;
-    border-radius: 50%;
+    border-radius: 10%;
     transition: 0.5s ease-in;
     border: none;
 }

@@ -19,7 +19,8 @@
 
         <div class="top-menu">
             <ul>
-                <li><a class="clickMenu" href="index.php">Каталог</a></li>
+                <li><a class="clickMenu" href="addgood.php">Добавить товар</a></li>
+                <li><a class="clickMenu" href="admin.php">Каталог</a></li>
                 <li><a class="clickMenu" href="#" class="cart">Корзина</a></li>
             </ul>
         </div>
@@ -30,7 +31,7 @@
     </header>
 
     <div class="all_goods">
-        <?= include "engine/goods.php"?>
+        <?= include "engine/editgoods.php"?>
         <-------I don't know, что это за единица и откуда она взялась 
     </div> 
 </body> 
