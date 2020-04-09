@@ -29,7 +29,8 @@ $good_title = $full_good['name'];
 
         <div class="top-menu">
             <ul>
-                <li><a class="clickMenu" href="index.php">Каталог</a></li>
+                <li><a class="clickMenu" href="addgood.php">Добавить товар</a></li>
+                <li><a class="clickMenu" href="admin.php">Каталог</a></li>
                 <li><a href="#" class="cart">Корзина</a></li>
             </ul>
         </div>
