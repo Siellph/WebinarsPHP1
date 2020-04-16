@@ -30,12 +30,11 @@ $good_title = $full_good['name'];
         <div class="top-menu">
             <ul>
                 <li><a class="clickMenu" href="index.php">Каталог</a></li>
-                <li><a href="#" class="cart">Корзина</a></li>
             </ul>
         </div>
         <div class="block-top-auth">
-            <p><a href="#">Вход</a></p>
-            <p><a href="#">Регистрация</a></p>
+            <p><a href="auth.php">Вход</a></p>
+            <p><a href="registration.php">Регистрация</a></p>
         </div>
     </header>
     <?php
@@ -57,7 +56,7 @@ $good_title = $full_good['name'];
             <input type="radio" value="4" name="score">4</input>
             <input type="radio" value="5" name="score">5</input>
             </div>
-            <textarea name="feed_text" class="message" cols="4" rows="50" placeholder="Оставьте отзыв" required></textarea>
+            <textarea name="feed_text" class="message" cols="4" rows="4" placeholder="Оставьте отзыв" required></textarea>
             <input class="textbox" type="email" placeholder="Введите ваш e-mail" name="contact">
             <input type="hidden" name="id_product" value="<?=$id?>">
             <input class="button" type="submit"  value="Отправить">

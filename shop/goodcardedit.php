@@ -31,7 +31,6 @@ $good_title = $full_good['name'];
             <ul>
                 <li><a class="clickMenu" href="addgood.php">Добавить товар</a></li>
                 <li><a class="clickMenu" href="admin.php">Каталог</a></li>
-                <li><a href="#" class="cart">Корзина</a></li>
             </ul>
         </div>
         <div class="block-top-auth">

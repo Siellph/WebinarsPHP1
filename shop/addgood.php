@@ -21,12 +21,11 @@
         <div class="top-menu">
             <ul>
                 <li><a class="clickMenu" href="admin.php">Каталог</a></li>
-                <li><a class="clickMenu" href="#" class="cart">Корзина</a></li>
             </ul>
         </div>
         <div class="block-top-auth">
-            <p><a href="#">Вход</a></p>
-            <p><a href="#">Регистрация</a></p>
+            <p><a href="auth.php">Вход</a></p>
+            <p><a href="registration.php">Регистрация</a></p>
         </div>
     </header>
 
