@@ -1,3 +1,11 @@
+<?php
+include "engine/database.php";
+$login = $_COOKIE['login'];
+$sql = "SELECT * FROM users WHERE `login`='$login'";
+$res = mysqli_query($connection, $sql);
+$table = mysqli_fetch_assoc($res);
+$role = $table['role'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,18 +27,27 @@
 
         <div class="top-menu">
             <ul>
-                <li><a class="clickMenu" href="index.php">Каталог</a></li>
+            <?php if ($_COOKIE['login'] == 'admin' && md5($_COOKIE['pass']=='21232f297a57a5a743894a0e4a801fc3')):?>
+                <li><a class="clickMenu" href="admin.php">Панель администратора</a></li>
+            <?php endif; ?>
+            <?php if ($_COOKIE['login'] && $role == '0'):?>
+            <li><a class="clickMenu" href="cart.php">Корзина</a></li>
+            <?php endif; ?>
             </ul>
         </div>
         <div class="block-top-auth">
-            <p><a href="auth.php">Вход</a></p>
-            <p><a href="registration.php">Регистрация</a></p>
+        <?php if ($_COOKIE['login']):?>
+            <p><a href="profile.php"><?=$_COOKIE['login']?></a></p>
+            <p><a href="engine/exit.php">Выход</a></p>
+        <?php else:?>
+        <p><a href="auth.php">Вход</a></p>
+        <p><a href="registration.php">Регистрация</a></p>
+        <?php endif; ?> 
         </div>
     </header>
 
     <div class="all_goods">
         <?= include "engine/goods.php"?>
-        <-------I don't know, что это за единица и откуда она взялась 
     </div> 
 </body> 
 </html>

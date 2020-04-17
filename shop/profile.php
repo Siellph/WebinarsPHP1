@@ -1,4 +1,17 @@
-<?php if (($_COOKIE['login'] == 'admin') && ($_COOKIE['pass']=='21232f297a57a5a743894a0e4a801fc3')):?>
+<?php
+include "engine/database.php";
+$login = $_COOKIE['login'];
+$sql = "SELECT * FROM users WHERE `login`='$login'";
+$res = mysqli_query($connection, $sql);
+$table = mysqli_fetch_assoc($res);
+$role = $table['role'];
+$firstname = $table['firstname'];
+$lastname = $table ['lastname'];
+$mail = $table['mail'];
+?>
+
+<?php if ($_COOKIE['login']):?>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,41 +20,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/header.css">
-    <link rel="stylesheet" href="public/css/addgood.css">
     <title>shop</title>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href="admin.php">
+            <a href="index.php">
                 <span class="use">shop</span>
             </a>
         </div>
 
         <div class="top-menu">
             <ul>
-                <li><a class="clickMenu" href="admin.php">Каталог</a></li>
+            <?php if ($_COOKIE['login'] == 'admin' && md5($_COOKIE['pass']=='21232f297a57a5a743894a0e4a801fc3')):?>
+                <li><a class="clickMenu" href="admin.php">Панель администратора</a></li>
+            <?php endif; ?>
+            
+             <?php if ($_COOKIE['login'] && $role == '0'):?>
+            <li><a class="clickMenu" href="index.php">Каталог</a></li>
+            <li><a class="clickMenu" href="cart.php">Корзина</a></li>
+            <?php endif; ?>
             </ul>
         </div>
         <div class="block-top-auth">
+        <?php if ($_COOKIE['login']):?>
             <p><a href="profile.php"><?=$_COOKIE['login']?></a></p>
             <p><a href="engine/exit.php">Выход</a></p>
+        <?php else:?>
+        <p><a href="auth.php">Вход</a></p>
+        <p><a href="registration.php">Регистрация</a></p>
+        <?php endif; ?> 
         </div>
     </header>
-
-    <form action="engine/addgood.php" method="POST" enctype="multipart/form-data">
-            <input class="textbox" type="text" placeholder="Наименование товара" name="name" required>
-            <input name="imagegood" type="file" class="textbox" required>
-            <textarea name="desc" class="message" cols="4" rows="20" placeholder="Краткое описание" required></textarea>
-            <textarea name="full_desc" class="message" cols="4" rows="50" placeholder="Полное описание" required></textarea>
-            <input class="textbox" type="number" placeholder="Укажите цену продажи" name="price" required>
-            <input class="button" type="submit"  value="Сохранить">
-            </form>
-
+    <div class="info">
+<p><?=$firstname?></p>
+<p><?=$lastname?></p>
+<p><?=$mail?></p>
+</div>
 </body> 
 </html>
-<?php elseif($_COOKIE['login'] != 'admin'): ?>
+<?php elseif (!($_COOKIE['login'])):?>
     <!DOCTYPE html>
 <html lang="en">
 
@@ -59,17 +78,13 @@
                 <span class="use">shop</span>
             </a>
         </div>
-
-        <div class="top-menu">
-
-        </div>
         <div class="block-top-auth">
             <p><a href="auth.php">Вход</a></p>
             <p><a href="registration.php">Регистрация</a></p>
         </div>
     </header>
     <h1 class="access_denide">Доступ запрещен!</h1>
-    <span><a href="index.php">Вернуться на главную страницу</a></span>
+    <span><a href="auth.php">Авторизуйтесь</a></span>
 </body> 
 </html>
 <?php endif; ?>

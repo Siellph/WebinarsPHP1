@@ -78,3 +78,6 @@ body {
     transition: 0.5s ease-in;
     border: none;
 }
+.nonform {
+    margin: 0 auto;
+}

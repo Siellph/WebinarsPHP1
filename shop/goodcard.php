@@ -33,8 +33,13 @@ $good_title = $full_good['name'];
             </ul>
         </div>
         <div class="block-top-auth">
-            <p><a href="auth.php">Вход</a></p>
-            <p><a href="registration.php">Регистрация</a></p>
+        <?php if ($_COOKIE['login']):?>
+            <p><a href="profile.php"><?=$_COOKIE['login']?></a></p>
+            <p><a href="engine/exit.php">Выход</a></p>
+        <?php else:?>
+        <p><a href="auth.php">Вход</a></p>
+        <p><a href="registration.php">Регистрация</a></p>
+        <?php endif; ?> 
         </div>
     </header>
     <?php
@@ -47,7 +52,7 @@ $good_title = $full_good['name'];
         ?>
         </div>
         <div class="feed_right">
-            <form action="engine/addfeedback.php" method="GET">
+            <form class="form" action="engine/addfeedback.php" method="GET">
             <input class="textbox cap" type="text" placeholder="Введите имя" name="name" required>
             <div class="select_score">Выберите оценку
             <input type="radio" value="1" name="score">1</input>
