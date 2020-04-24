@@ -7,7 +7,6 @@ $sql = "SELECT * FROM goods WHERE id = $id";
 $result = mysqli_query($connection, $sql);
 
 $full_good = mysqli_fetch_assoc($result);
-// print_r($full_good);
 
 $good_title = $full_good['name'];
 $path_photo = $full_good['path_photo'];
@@ -33,6 +32,5 @@ echo '</form>';
 echo '</div>';
 echo '</div>';
 
-// print_r($id);
 mysqli_close($connection);
 ?>

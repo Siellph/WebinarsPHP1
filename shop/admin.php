@@ -36,11 +36,7 @@ $role = $table['role'];
             <p><a href="engine/exit.php">Выход</a></p>
         </div>
     </header>
-
-    <div class="all_goods">
         <?= include "engine/editgoods.php"?>
-        <-------I don't know, что это за единица и откуда она взялась 
-    </div> 
 </body> 
 </html>
 <?php elseif($_COOKIE['login'] != 'admin' && $role!='1' && md5($_COOKIE['pass']!='21232f297a57a5a743894a0e4a801fc3')): ?>

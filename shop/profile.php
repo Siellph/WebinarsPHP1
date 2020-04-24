@@ -1,5 +1,6 @@
 <?php
 include "engine/database.php";
+include "engine/cartsum.php";
 $login = $_COOKIE['login'];
 $sql = "SELECT * FROM users WHERE `login`='$login'";
 $res = mysqli_query($connection, $sql);
@@ -39,7 +40,13 @@ $mail = $table['mail'];
             
              <?php if ($_COOKIE['login'] && $role == '0'):?>
             <li><a class="clickMenu" href="index.php">Каталог</a></li>
-            <li><a class="clickMenu" href="cart.php">Корзина</a></li>
+            <?php if ($_COOKIE['login'] && $role == '0'):
+                if ($cost > 0){?>
+            <li><a class="clickMenu" href="cart.php">Корзина </br> <?=$cost?>&#36;</a></li>
+               <?php } else { ?>
+                    <li><a class="clickMenu" href="cart.php">Корзина</a></li>
+             <?php   }
+             endif; ?>
             <?php endif; ?>
             </ul>
         </div>

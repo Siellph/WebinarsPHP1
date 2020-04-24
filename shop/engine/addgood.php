@@ -17,7 +17,7 @@ $filename = basename($_FILES['imagegood']['name']);
 $uploadfile = $uploaddir . $filename;
 if (file_exists($uploadfile)) do {
     $arr = pathinfo($uploadfile);
-    $uploadfile=$arr[dirname].'/'.$arr[filename].'_.'.$arr[extension];
+    $uploadfile=$arr['dirname'].'/'.$arr['filename'].'_.'.$arr['extension'];
 } while (file_exists($uploadfile));
 
 if (move_uploaded_file($_FILES['imagegood']['tmp_name'], $uploadfile)) {
@@ -25,7 +25,7 @@ if (move_uploaded_file($_FILES['imagegood']['tmp_name'], $uploadfile)) {
     $image->load($uploadfile);
     $image->resizeToWidth(130);
     $arr = pathinfo($uploadfile);
-    $newfilename = $thumbpath.$arr[basename];
+    $newfilename = $thumbpath.$arr['basename'];
     $image->save($newfilename);
 } else {
     echo "Возможная атака с помощью файловой загрузки!<br>";

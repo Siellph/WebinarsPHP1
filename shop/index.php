@@ -1,5 +1,6 @@
 <?php
 include "engine/database.php";
+include "engine/cartsum.php";
 $login = $_COOKIE['login'];
 $sql = "SELECT * FROM users WHERE `login`='$login'";
 $res = mysqli_query($connection, $sql);
@@ -30,9 +31,13 @@ $role = $table['role'];
             <?php if ($_COOKIE['login'] == 'admin' && md5($_COOKIE['pass']=='21232f297a57a5a743894a0e4a801fc3')):?>
                 <li><a class="clickMenu" href="admin.php">Панель администратора</a></li>
             <?php endif; ?>
-            <?php if ($_COOKIE['login'] && $role == '0'):?>
-            <li><a class="clickMenu" href="cart.php">Корзина</a></li>
-            <?php endif; ?>
+            <?php if ($_COOKIE['login'] && $role == '0'):
+                if ($cost > 0){?>
+            <li><a class="clickMenu" href="cart.php">Корзина </br> <?=$cost?>&#36;</a></li>
+               <?php } else { ?>
+                    <li><a class="clickMenu" href="cart.php">Корзина</a></li>
+             <?php   }
+             endif; ?>
             </ul>
         </div>
         <div class="block-top-auth">
@@ -45,9 +50,6 @@ $role = $table['role'];
         <?php endif; ?> 
         </div>
     </header>
-
-    <div class="all_goods">
-        <?= include "engine/goods.php"?>
-    </div> 
+    <?= include "engine/goods.php"?>
 </body> 
 </html>

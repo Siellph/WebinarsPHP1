@@ -3,7 +3,9 @@ include "database.php";
 
 $sql = "SELECT * FROM goods WHERE id > 0";
 $result = mysqli_query($connection, $sql);
-
+?>
+<main class="all_goods">
+<?php
 if (mysqli_num_rows($result) > 0) {
     while($good = mysqli_fetch_assoc($result)) {
         $good_title = $good['name'];
@@ -26,10 +28,12 @@ if (mysqli_num_rows($result) > 0) {
         echo '</div>';
         echo '</div>';
         echo '</div>';
-        // print_r($good);
     }
 } else {
     echo "В базе нет товаров";
 }
+?>
+</main>
+<?php
 mysqli_close($connection);
 ?>

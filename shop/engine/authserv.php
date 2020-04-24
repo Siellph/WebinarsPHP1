@@ -10,6 +10,7 @@ $res = mysqli_query($connection, $sql) or die ("Error".mysqli_error($connection)
 if (mysqli_num_rows($res) > 0) {
     setcookie("login",$login,time()+3600,'/');
     setcookie("pass",md5($pass),time()+3600,'/');
+    setcookie("id",$id,time(+3600),'/');
     if ($login=='admin') {
         header("Location: ../admin.php");
     } else {

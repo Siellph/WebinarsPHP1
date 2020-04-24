@@ -8,7 +8,9 @@ $role = $table['role'];
 
 $sql = "SELECT * FROM goods WHERE id > 0";
 $result = mysqli_query($connection, $sql);
-
+?>
+<main class="all_goods">
+<?php
 if (mysqli_num_rows($result) > 0) {
     while ($good = mysqli_fetch_assoc($result)) {
         $good_title = $good['name'];
@@ -38,6 +40,8 @@ if (mysqli_num_rows($result) > 0) {
     <?php
 }
 }
-
+?>
+</main>
+<?php
 mysqli_close($connection);
 ?>
