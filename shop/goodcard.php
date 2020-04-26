@@ -29,15 +29,17 @@ $good_title = $full_good['name'];
 
         <div class="top-menu">
             <ul>
-                <li><a class="clickMenu" href="#">Ссылка1</a></li>
-                <li><a href="#">Ссылка2</a></li>
-                <li><a href="#">Ссылка3</a></li>
-                <li><a href="#" class="cart">Корзина</a></li>
+                <li><a class="clickMenu" href="index.php">Каталог</a></li>
             </ul>
         </div>
         <div class="block-top-auth">
-            <p><a href="#">Вход</a></p>
-            <p><a href="#">Регистрация</a></p>
+        <?php if ($_COOKIE['login']):?>
+            <p><a href="profile.php"><?=$_COOKIE['login']?></a></p>
+            <p><a href="engine/exit.php">Выход</a></p>
+        <?php else:?>
+        <p><a href="auth.php">Вход</a></p>
+        <p><a href="registration.php">Регистрация</a></p>
+        <?php endif; ?> 
         </div>
     </header>
     <?php
@@ -50,7 +52,7 @@ $good_title = $full_good['name'];
         ?>
         </div>
         <div class="feed_right">
-            <form action="engine/addfeedback.php" method="GET">
+            <form class="form" action="engine/addfeedback.php" method="GET">
             <input class="textbox cap" type="text" placeholder="Введите имя" name="name" required>
             <div class="select_score">Выберите оценку
             <input type="radio" value="1" name="score">1</input>
@@ -59,7 +61,7 @@ $good_title = $full_good['name'];
             <input type="radio" value="4" name="score">4</input>
             <input type="radio" value="5" name="score">5</input>
             </div>
-            <textarea name="feed_text" class="message" cols="4" rows="50" placeholder="Оставьте отзыв" required></textarea>
+            <textarea name="feed_text" class="message" cols="4" rows="4" placeholder="Оставьте отзыв" required></textarea>
             <input class="textbox" type="email" placeholder="Введите ваш e-mail" name="contact">
             <input type="hidden" name="id_product" value="<?=$id?>">
             <input class="button" type="submit"  value="Отправить">

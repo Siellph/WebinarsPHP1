@@ -10,15 +10,7 @@ $sql = "INSERT INTO feedback (`product_id`, `name`, `score`, `feedback`, `e-mail
 $result = mysqli_query($connection, $sql);
 echo $result;
 mysqli_close($connection);
-// print_r($name);
-// print_r($score);
-// print_r($feed);
-// print_r($contact);
-// print_r($id);
 
 exit('<meta http-equiv="refresh" content="0; url=../goodcard.php?id='.$id.'" />');
 
-// if(isset($_GET["send"])) {
-//     exit('<meta http-equiv="refresh" content="0; url=index.php" />');
-// }
 ?>
