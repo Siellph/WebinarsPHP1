@@ -1,7 +1,7 @@
 <?php
 $sqlserver = "localhost";
 $sqluser = "root";
-$sqlpass = "";
+$sqlpass = "root";
 $sqlbase = "shop";
 
 $connection = mysqli_connect($sqlserver, $sqluser, $sqlpass, $sqlbase);
