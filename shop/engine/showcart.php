@@ -95,5 +95,7 @@ $res_cart = mysqli_query($connection, $sql_cart);
 </td>
 </table>
 <?php
-} else {}
+} else {
+    ?> <h3>В корзине пусто. Вернитесь в <a href="index.php">каталог</a>, чтобы выбрать товар!</h3> <?php
+}
 ?>
